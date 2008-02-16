@@ -1,0 +1,2 @@
+package 'needle', '1.3.0'
+tar_bz2 'http://rubyforge.org/frs/download.php/7843/needle-1.3.0.tar.bz2'
