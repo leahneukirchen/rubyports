@@ -1,0 +1,5 @@
+package 'eventmachine', '0.10.0'
+tar_gz "http://rubyforge.org/frs/download.php/28958/eventmachine-0.10.0.tar.gz"
+build "ruby setup.rb config"
+build "ruby setup.rb setup"
+hookin pkgpath, [pkgpath+"/lib", pkgpath+"/ext"]
