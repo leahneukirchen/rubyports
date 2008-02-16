@@ -1,0 +1,3 @@
+package 'rails'
+svn 'http://svn.rubyonrails.org/rails/trunk'
+hookin pkgpath, [pkgpath+"/*/lib"]
