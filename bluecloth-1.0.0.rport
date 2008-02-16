@@ -1,0 +1,2 @@
+package 'bluecloth', '1.0.0'
+tar_bz2 'http://deveiate.org/code/BlueCloth-1.0.0.tar.bz2'
