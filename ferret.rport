@@ -1,0 +1,4 @@
+package 'ferret'
+svn 'svn://davebalmain.com/ferret/trunk'
+build "cd ruby && rake ext && ruby setup.rb config && ruby setup.rb setup"
+hookin pkgpath, [pkgpath+"/ruby/lib", pkgpath+"/ruby/ext"]
