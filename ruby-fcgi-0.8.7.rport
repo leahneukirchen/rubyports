@@ -1,0 +1,5 @@
+package 'ruby-fcgi', '0.8.7'
+tar_gz 'http://www.moonwolf.com/ruby/archive/ruby-fcgi-0.8.7.tar.gz'
+build 'ruby install.rb config'
+build 'ruby install.rb setup'
+hookin pkgpath, [pkgpath+"/lib", pkgpath+"/ext/fcgi"]
