@@ -1,0 +1,2 @@
+package 'net-sftp', '1.1.0'
+tar_bz2 'http://rubyforge.org/frs/download.php/7929/net-sftp-1.1.0.tar.bz2'
