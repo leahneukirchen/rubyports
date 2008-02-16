@@ -1,0 +1,5 @@
+package 'swiftiply', '0.6.1.1'
+tar_bz2 "http://rubyforge.org/frs/download.php/27722/swiftiply-0.6.1.1.tar.bz2"
+build "ruby setup.rb config"
+build "ruby setup.rb setup"
+hookin pkgpath, [pkgpath+"/src", pkgpath+"/ext/fastfilereader"]
