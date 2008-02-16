@@ -1,0 +1,4 @@
+package 'ruby-prof', '0.6.0'
+tar_gz "http://rubyforge.org/frs/download.php/31711/ruby-prof-0.6.0.tgz"
+build "cd ext && ruby extconf.rb && make"
+hookin pkgpath, [pkgpath+"/lib", pkgpath+"/ext"]
