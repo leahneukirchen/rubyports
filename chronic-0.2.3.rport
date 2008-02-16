@@ -1,0 +1,2 @@
+package 'chronic', '0.2.3'
+gem 'http://rubyforge.org/frs/download.php/22394/chronic-0.2.3.gem'
