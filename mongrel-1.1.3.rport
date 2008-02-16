@@ -1,0 +1,5 @@
+package 'mongrel', '1.1.3'
+tar_gz "http://rubyforge.org/frs/download.php/30048/mongrel-1.1.3.tgz"
+build "ruby setup.rb config"
+build "ruby setup.rb setup"
+hookin pkgpath, [pkgpath+"/lib", pkgpath+"/ext/http11"]
