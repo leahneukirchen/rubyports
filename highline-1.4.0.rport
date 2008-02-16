@@ -1,0 +1,2 @@
+package 'highline', '1.4.0'
+tar_gz 'http://rubyforge.org/frs/download.php/23791/highline-1.4.0.tgz'
