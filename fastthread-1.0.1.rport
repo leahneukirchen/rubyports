@@ -1,0 +1,5 @@
+package 'fastthread', '1.0.1'
+tar_gz 'http://rubyforge.org/frs/download.php/27041/fastthread-1.0.1.tgz'
+build "ruby setup.rb config"
+build "ruby setup.rb setup"
+hookin pkgpath, [pkgpath+"/ext/fastthread"]
