@@ -1,2 +1,5 @@
 package 'capistrano', '2.1.0'
+depend 'net-ssh-1.0.10...'
+depend 'net-sftp-1.1.0...'
+depend 'highline'
 tar_gz 'http://rubyforge.org/frs/download.php/26617/capistrano-2.1.0.tgz'
