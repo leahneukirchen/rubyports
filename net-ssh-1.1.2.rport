@@ -1,2 +1,3 @@
 package 'net-ssh', '1.1.2'
+depend 'needle-1.2...'
 tar_bz2 'http://rubyforge.org/frs/download.php/21889/net-ssh-1.1.2.tar.bz2'
