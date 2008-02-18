@@ -1,0 +1,5 @@
+package 'sqlite3-ruby', '1.2.1'
+tar_bz2 'http://rubyforge.org/frs/download.php/17096/sqlite3-ruby-1.2.1.tar.bz2'
+build 'ruby setup.rb config'
+build 'ruby setup.rb setup'
+hookin pkgpath, [pkgpath+"/lib", pkgpath+"/ext/sqlite3_api"]
