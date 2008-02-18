@@ -1,0 +1,2 @@
+package 'daemons', '1.0.9'
+tar_gz 'http://rubyforge.org/frs/download.php/27164/daemons-1.0.9.tgz'
