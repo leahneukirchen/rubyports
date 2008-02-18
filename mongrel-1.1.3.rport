@@ -1,4 +1,6 @@
 package 'mongrel', '1.1.3'
+depend 'fastthread-1.0.1...'
+depend 'daemons-1.0.3...'
 tar_gz "http://rubyforge.org/frs/download.php/30048/mongrel-1.1.3.tgz"
 build "ruby setup.rb config"
 build "ruby setup.rb setup"
