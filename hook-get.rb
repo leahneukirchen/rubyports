@@ -1,6 +1,12 @@
 #!/usr/bin/env ruby -w
 
 class HookGet
+  PORTS = (if ENV["RUBYPORTS"]
+             ENV["RUBYPORTS"].split(":")
+           else
+             ["./ports"]
+           end).map { |d| File.expand_path d }
+
   def self.run(file)
     new.run(file)
   end
@@ -10,8 +16,11 @@ class HookGet
   end
 
   def run(file)
-    instance_eval File.read(file), file, 1
-    hookin  unless hooked_in?
+    file = File.expand_path(file)
+    Dir.chdir(File.dirname(file)) {
+      instance_eval File.read(file), file, 1
+      hookin  unless hooked_in?
+    }
   end
 
   def sh(*args)
@@ -78,15 +87,21 @@ class HookGet
     if chosen
       puts "dependency #{expr} satisfied: found #{chosen}"
     else
-      available = Dir["#{package}*.rport"].
-                  map { |f| File.basename f, ".rport" }.
-                  grep(/^#{package}(-[^-]*)?$/)
-      to_install = choose_version(expr, available)
+      available = {}
+      p Dir.pwd
+      Dir["{#{PORTS.join(",")}}/#{package}/#{package}*.rport"].each { |port|
+        available[File.basename(port, ".rport")] = port
+      }
+      to_install = choose_version(expr, available.keys)
       if to_install
         puts "hook-get #{to_install}  # satisfies #{expr}"
-        HookGet.run "#{to_install}.rport"
+        HookGet.run available[to_install]
       else
-        abort "version conflict: unable to satisfy #{expr}"
+        if available.empty?
+          abort "can't find any package for #{expr}"
+        else
+          abort "version conflict: unable to satisfy #{expr}"
+        end
       end
     end
   end
@@ -104,12 +119,17 @@ class HookGet
     max ||= min
     min = version2array min
     max = version2array max
-    max[-1] += 1
 
     # just "pkg" means "any version"
-    min = [-1.0/0]  if min == [1.0/0] && max == [1.0/0]
+    min = [-1.0/0]  if min == [1.0/0]
+    if max == [1.0/0]
+      range = min..max
+    else
+      max[-1] += 1
+      range = min...max         # Exclusive!
+    end
 
-    available.select { |v| (min...max).include? version2array(v) }.
+    available.select { |v| range.include? version2array(v) }.
               sort_by { |v| version2array(v) }.
               last
   end

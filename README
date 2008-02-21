@@ -21,11 +21,11 @@ extensions.  RubyPorts does not provide binaries.
 Usually, you will want to use RubyPorts directly from the Git checkout.
 Periodically call <tt>git pull</tt> to keep your ports tree fresh.
 
-Use <tt>ls -1 *.rport</tt> to get a list of available ports.
+Use <tt>ls -1 ports/*/*.rport</tt> to get a list of available ports.
 
-To install a port, simply type <tt>hook-get.rb portsfile.rport</tt> to
-automatically download, build and hookin the port.  Dependencies will
-be installed automatically if possible.  You can also try to type
+To install a port, simply type <tt>hook-get.rb /path/to/portsfile.rport</tt>
+to automatically download, build and hookin the port.  Dependencies
+will be installed automatically if possible.  You can also try to type
 <tt>hook-get.rb portname</tt> and hook-get will try to figure out what
 you want to install.  Note that this can install unstable and even
 broken development versions of your code; you may wish to provide a
@@ -33,6 +33,9 @@ version number as well.
 
 Periodically call <tt>hook-bin.rb</tt> to update the symlinks in
 <tt>bin</tt>.
+
+Set the environment variable $RUBYPORTS to the full path of the
+"ports" directory if you want to call hook-get from any location.
 
 == How RubyPorts works
 
@@ -105,6 +108,7 @@ Patches contributing a port are welcome *iff*
 
 == Thanks to
 
+* Michael Fellinger, for help with development.
 * pkgsrc/DarwinPorts/OpenBSD ports/portage for inspiration.
 * Paul Feyerabend, for making me open my eyes.
 
