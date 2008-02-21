@@ -1,0 +1,2 @@
+package 'ramaze', '0.3.5'
+tar_bz2 'http://rubyforge.org/frs/download.php/31386/ramaze-0.3.5.tar.bz2'
