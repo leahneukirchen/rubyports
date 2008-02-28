@@ -34,9 +34,9 @@ class HookGet
 
   def darcs(repo, tag=nil)
     if tag
-      sh "darcs", "get", "--partial", "--tag=#{tag}", pkgpath
+      sh "darcs", "get", "--partial", "--tag=#{tag}", repo, pkgpath
     else
-      sh "darcs", "get", "--partial", pkgpath
+      sh "darcs", "get", "--partial", repo, pkgpath
     end
   end
 
