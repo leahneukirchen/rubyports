@@ -101,7 +101,7 @@ git clone http://git.vuxu.org/rubyports.git
 git clone git://github.com/chneukirchen/rubyports.git
 
 Patches contributing a port are welcome *iff*
-* the patch only touches/adds the .rport-file.
+* the patch only touch/add the desc and PORT.rport files.
 * the patch is titled "Added port PORT-VERSION" or "Update port
   PORT-VERSION".
 * all dependencies are already in RubyPorts or contributed as well.
