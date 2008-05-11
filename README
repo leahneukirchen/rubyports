@@ -96,7 +96,7 @@ Please take note of these things:
 Please mail bugs, suggestions and patches to
 <mailto:chneukirchen@gmail.com>.
 
-Git repository ("git send" is welcome for patches):
+Git repository ("git send-email" is welcome for patches):
 git clone http://git.vuxu.org/rubyports.git
 git clone git://github.com/chneukirchen/rubyports.git
 
